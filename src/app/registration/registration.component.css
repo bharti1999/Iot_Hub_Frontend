@@ -1,0 +1,44 @@
+.registrationBody {
+    background: #333;
+    color: #fff;
+  }
+  
+  .navbar {
+    border-bottom: #008ed6 3px solid;
+    opacity: 0.8;
+  }
+  
+  #registration-section {
+    
+    background: url(/assets/regImage3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 700px;
+  }
+  
+  #registration-section .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  #registration-section .registration-inner {
+    padding-top: 150px;
+  }
+  
+  #registration-section .card-form {
+    opacity: 0.8;
+  }
+
+  #registration-section .fas{
+  color: #008ed6;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+  
+ 

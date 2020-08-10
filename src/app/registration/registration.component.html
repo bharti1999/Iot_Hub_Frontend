@@ -1,0 +1,102 @@
+<div class="registrationBody">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+        <div class="container">
+          <a href="/" class="navbar-brand">IOT HUB</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="/" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="/registration" class="nav-link">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Registration SECTION -->
+      <header id="registration-section">
+        <div class="dark-overlay">
+          <div class="registration-inner container">
+            <div class="row">
+              <div class="col-lg-8 d-none d-lg-block">
+                <h1 class="display-5">
+                    <strong>IOT</strong> is the game-changer for overall 
+                    <strong>Business ecosystem</strong> transformation
+                </h1>
+                <div class="d-flex">
+                  <div class="p-4 align-self-start">
+                    <i class="fas fa-check fa-2x"></i>
+                  </div>
+                  <div class="p-4 align-self-end">
+                    As the Internet of things advances, the very notion of a clear dividing line between reality and virtual reality becomes blurred, sometimes in creative ways!
+                  </div>
+                </div>
+    
+                <div class="d-flex">
+                  <div class="p-4 align-self-start">
+                    <i class="fas fa-check fa-2x"></i>
+                  </div>
+                  <div class="p-4 align-self-end">
+                    The Internet of Things is not a concept; it is a network, the true technology-enabled Network of all networks!
+                  </div>
+                </div>
+    
+                <div class="d-flex">
+                  <div class="p-4 align-self-start">
+                    <i class="fas fa-check fa-2x"></i>
+                  </div>
+                  <div class="p-4 align-self-end">
+                    Everything that can be automated will be automated!
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4">
+                <div class="card bg-primary text-center card-form">
+                  <div class="card-body">
+                    <h3>Sign Up Today</h3>
+                    <p>Please fill out this form to register</p>
+                    <div *ngIf="error" class="alert alert-danger">
+                        Username already exist..
+                    </div>
+                    <form #f="ngForm" (ngSubmit)="OnSubmit(f)">
+                      <div class="form-group">
+                        <input type="text" ngModel name="Name" #Name="ngModel" class="form-control form-control-lg" placeholder="Name" required>
+                        <div *ngIf="Name.touched && Name.invalid" class="text-danger">Name is Required</div>
+                      </div>
+                      <div class="form-group">
+                        <input type="email" ngModel name="Username" #Username="ngModel" class="form-control form-control-lg" placeholder="Username" required email>
+                        <div *ngIf="Username.touched && Username.invalid" class="text-danger">
+                            <div *ngIf="Username.errors.required" >Username is required</div>
+                            <div  *ngIf="Username.errors.email">Username must be of email type</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" ngModel name="Password" #Password="ngModel" class="form-control form-control-lg" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[#?!@$%^&*-])(.{8,})">
+                        <div *ngIf="Password.touched && Password.invalid" class="text-danger">
+                            <div *ngIf="Password.errors.required" >Password is required</div>
+                            <div *ngIf="Password.errors.pattern" >Password must contain atleast 1 lowercase letter & uppercase letter & special character & number. The minimum allowed length is 8 characters </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" ngModel name="ConfirmPassword" #ConfirmPassword="ngModel"  class="form-control form-control-lg" placeholder="Confirm Password" required>
+                        <div *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid" class="text-danger">
+                            <div *ngIf="ConfirmPassword.errors.required" >Confirm Password is required</div>
+                        </div>
+                        <div *ngIf="f.value.ConfirmPassword!=null && f.value.Password!=null && f.value.ConfirmPassword!=f.value.Password" class="text-danger" >Confirm Password must same as password</div>
+                      </div> 
+                      <input type="submit" value="Submit" class="btn btn-outline-light btn-block">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+</div>

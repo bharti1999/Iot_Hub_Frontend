@@ -1,0 +1,76 @@
+<!-- <div *ngIf="User!=null">
+    <nav class="navbar navbar-light bg-light" >
+        <a href="/" class="navbar-brand">IOT HUB</a>
+        <div class="nav-item">
+            <a href="#" (click)="logout()" class="nav-link">
+              <i class="fas fa-user-times"></i> Logout
+            </a>
+        </div>
+    </nav> 
+    
+    <div style="display: flex; margin-top: 30px;">
+      <div id="side-div"></div>
+      
+      <div style="margin-top: 80px;">
+        <div *ngIf="error" class="alert alert-danger lead">Error occur on connection !!</div>
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">Number Of Things</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Allocate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let thing of things">
+                  <td>{{thing[0]}}</td>
+                  <td>{{thing[1]}}</td>
+                  <td>{{thing[2]}}</td>
+                  <td><button type="button" class="btn btn-success" (click)="certificateProvision(thing)">Allocate</button></td>
+                </tr>
+              </tbody>
+            </table>
+         
+      </div>
+  </div> -->
+
+  <div *ngIf="User">
+    <nav class="navbar navbar-dark bg-dark" >
+      <h1 style="color: white;">ADMIN HOME</h1>
+      <button type="button" class="btn btn-link" routerLink=''><h3>Logout</h3></button>
+  </nav> 
+  
+  <div style="display: flex; margin-top: 30px;">
+      <div id="side-div"></div>
+      
+      <div style="margin-top: 80px;">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">Car Name</th>
+                  <th scope="col">Car ID</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Allocate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let thing of things">
+                  <td>{{thing[4]}}</td>
+                  <td>{{thing[1]}}</td>
+                  <td>{{thing[2]}}</td>
+                  <td *ngIf="thing[3]===1 ; else elseBlock">pending</td>
+                  <ng-template #elseBlock>
+                    <td>completed</td>
+                  </ng-template>
+                  <td><button type="button" (click)="certificateProvision(thing)" class="btn btn-success" [disabled]="thing[3]===0">Allocate</button></td>
+                </tr>
+              </tbody>
+            </table>
+         
+      </div>
+  </div>
+  
+
+  </div>

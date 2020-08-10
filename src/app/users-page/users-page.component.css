@@ -1,0 +1,13 @@
+#side-div{
+    width: 40vw; 
+    height: 80vh;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/b7bcdb32152391.57a57ef801018.gif);
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
+#inner-div{
+    position: relative;
+    left: 10vw;
+    top: 14vh;
+    width: 35vw;
+}

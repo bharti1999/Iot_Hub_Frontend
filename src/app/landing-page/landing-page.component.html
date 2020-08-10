@@ -1,0 +1,61 @@
+<div class="loginBody">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+    <div class="container">
+      <a href="/" class="navbar-brand">IOT HUB</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="/registration" class="nav-link">Sign up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+    <!-- Login Section -->
+    <section id="login-section">
+        <div class="dark-overlay">
+            <div class="d-none d-lg-block quotes text-center">
+                <h1 class="display-4">
+                    <strong>Provisioning</strong> and  creation of 
+                    <strong>Certificates</strong>
+                </h1>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Checking certificate and status of virtual devices</p>
+                </blockquote>
+            </div>
+          <div class="login-inner container">
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="card bg-primary text-center card-form">
+                  <div class="card-body">
+                    <h3>Login Portal !!</h3>
+                    <p>Please sign in</p>
+                    <div *ngIf="errMsg" class="text-danger lead">
+                      Invalid username or password..
+                    </div>
+                    <form  #f="ngForm"  (ngSubmit)="OnSubmit(f)">
+                      <div class="form-group">
+                        <input type="email"  ngModel name="Username" #Username="ngModel" class="form-control form-control-lg" placeholder="Enter username" required>
+                        <div *ngIf="Username.touched && Username.invalid" class="text-danger">Username is Required</div>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" ngModel name="Password" #Password="ngModel" class="form-control form-control-lg" placeholder="Enter password" required>
+                        <div *ngIf="Password.touched && Password.invalid" class="text-danger">Password is Required</div>
+                      </div>
+                      <input type="submit" class="btn btn-outline-light btn-block">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
